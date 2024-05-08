@@ -27,13 +27,13 @@ jobs:
           # Set the files to commit
           add: "README.md"
       - name: Push changes
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           branch: daily-contribution
           # Set the Git credentials
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Open pull request
-        uses: twatis/daily-contribution@v3
+        uses: peter-evans/create-pull-request@v3
         with:
           title: "Daily Contribution"
           commit-message: "Daily contribution"
