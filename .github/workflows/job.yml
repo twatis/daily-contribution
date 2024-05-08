@@ -1,9 +1,9 @@
-# link to article here--> https://medium.com/@bumsyalao12/how-i-automated-daily-contributions-to-github-with-github-actions-bd5d477cf75c
+# link to article--> https://medium.com/@bumsyalao12/how-i-automated-daily-contributions-to-github-with-github-actions-bd5d477cf75c
 name: Daily Contributions
 
 on:
   schedule:
-    - cron: '0 0 * * 1-5' # Run on Mon - Fri @ midnight
+    - cron: '55 16 * * 1-5' # runs from Mon - Fri at midnight, subject to change
 
 jobs:
   make-contribution:
@@ -30,9 +30,10 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: daily-contribution
+          # Set the Git credentials
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Open pull request
-        uses: twatis/daily-contribution@v3
+        uses: peter-evans/create-pull-request@v3
         with:
           title: "Daily Contribution"
           commit-message: "Daily contribution"
@@ -40,4 +41,5 @@ jobs:
           base: main
           # Set the pull request body
           body: "This pull request was created automatically by a GitHub Actions workflow to make a daily contribution."
+          # Set the Git credentials
           token: ${{ secrets.GITHUB_TOKEN }}
