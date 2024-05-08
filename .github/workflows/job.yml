@@ -32,7 +32,7 @@ jobs:
           branch: daily-contribution
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Open pull request
-        uses: twatis/daily-contributiont@v3
+        uses: twatis/daily-contribution@v3
         with:
           title: "Daily Contribution"
           commit-message: "Daily contribution"
