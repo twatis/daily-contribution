@@ -3,7 +3,7 @@ name: Daily Contributions
 
 on:
   schedule:
-    - cron: '28 17 * * 1-5' # runs from Mon - Fri at midnight, subject to change
+    - cron: '0 0 * * 1-5' # runs from Mon - Fri at midnight
 
 jobs:
   make-contribution:
