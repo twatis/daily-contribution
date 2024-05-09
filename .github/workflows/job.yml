@@ -3,7 +3,7 @@ name: Daily Contributions
 
 on:
   schedule:
-    - cron: '12 21 * * 1-5'
+    - cron: '21 21 * * 1-5'
 jobs:
   make-contribution:
     runs-on: ubuntu-latest
