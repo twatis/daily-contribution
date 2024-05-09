@@ -3,8 +3,7 @@ name: Daily Contributions
 
 on:
   schedule:
-    - cron: '58 20 * * 1-5' # runs from Mon - Fri at midnight
-
+    - cron: '12 21 * * 1-5'
 jobs:
   make-contribution:
     runs-on: ubuntu-latest
